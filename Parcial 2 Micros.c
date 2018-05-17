@@ -1,0 +1,33 @@
+#include <16f887.h>
+#device adc=10 //Seleccion de cantidad de bits para el ADC
+#use delay (internal=8M)
+#fuses xt,nowdt,noput,noprotect,nobrownout,nolvp
+#use RS232(BAUD=2400, XMIT=PIN_C6,RCV=PIN_C7, BITS=8, PARITY=N)
+#include <lcd.c>
+
+//declaracion de las varibales  del programa
+float Temperatura, Res=0.00488;//Res es el valor de la resolucion con 10 bits
+void main(){
+   set_tris_d(0);
+   
+   //Se configura eñ reloj del conversor 
+   setup_adc(adc_clock_div_8);//Configuracion del reloj del conversor 
+   
+   setup_adc_ports(san0);//habilita los puertos an0
+   
+   lcd_init();//Inicialización de la LCD
+   
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"Temperatura");
+   
+   set_adc_channel(0);//Se establece el canal 0 para el ADC usando el PIN A0 
+   
+   while(true){
+      //Se realiza la lectura de los canales analogos
+      Temperatura = ((read_adc())*(Res)/(0.01));//Formula T=ADC*RES/LM35VP
+      delay_us(50);//Delay de lectura
+      lcd_gotoxy(2,2);
+      printf(lcd_putc,"%f",Temperatura);
+      printf("%f \r",Temperatura);
+   }
+}

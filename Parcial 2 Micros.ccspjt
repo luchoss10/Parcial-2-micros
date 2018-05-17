@@ -1,0 +1,16 @@
+[PROJECT]
+Target=Parcial 2 Micros.hex
+Processor_Text=PIC16F887
+CCSVersion=5.008
+Compiler=PCM
+[Target Data]
+FileList=Parcial 2 Micros.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Parcial 2 Micros.c]
+Type=4
+[mru-list]
+1=Parcial 2 Micros.c
+[Units]
+Count=1
+1=Parcial 2 Micros (main)
