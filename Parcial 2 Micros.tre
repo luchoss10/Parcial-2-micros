@@ -1,5 +1,5 @@
 ÀÄParcial 2 Micros
-   ÀÄMAIN  0/196  Ram=4
+   ÀÄMAIN  0/175  Ram=4
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄlcd_init  0/51  Ram=2
       ³  ÃÄ@delay_ms1  0/20  Ram=1

@@ -1,5 +1,4 @@
 #include <16f887.h>
-#device adc=10 //Seleccion de cantidad de bits para el ADC
 #use delay (internal=8M)
 #fuses xt,nowdt,noput,noprotect,nobrownout,nolvp
 #use RS232(BAUD=2400, XMIT=PIN_C6,RCV=PIN_C7, BITS=8, PARITY=N)

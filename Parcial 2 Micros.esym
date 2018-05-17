@@ -1,7 +1,7 @@
-D G "__PCM__" 0 0 ""5.008""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""16-may.-18""
-D G "__TIME__" 0 0 ""22:15:12"" "Standard Header file for the PIC16F887 device ////////////////"
+D G "__PCM__" 0 37 ""5.008""
+D G "__DEVICE__" 0 37 "887"
+D G "__DATE__" 0 37 ""16-may.-18""
+D G "__TIME__" 0 37 ""23:00:27"" "Standard Header file for the PIC16F887 device ////////////////"
 c L "set_tris_a" 1 5 15 "FUNCTION"
 v L "value" 1 30 "int8" `54 
 f B "set_tris_a" 1 30 "void(int8 value)" `53 
@@ -904,18 +904,37 @@ V L "on" 2 443 "int8" `660
 F G "lcd_cursor_on" 2 444 "void(int8 on)" `659 
 C L "lcd_cursor_on" 2 2 1 "FUNCTION"
 C L "lcd_cursor_on" 2 2 1 "FUNCTION"
-V G "Temperatura" 0 9 "float" `661 
-V G "Res" 0 9 "float" `662 
-C L "MAIN" 0 8 1 "FUNCTION"
-F G "MAIN" 0 10 "void()" `663 
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
+D G "set_tris_kbd" 3 47 "(x) set_tris_d(x)"
+D G "COL0" 3 66 " (1 << 4)"
+D G "COL1" 3 67 " (1 << 5)"
+D G "COL2" 3 68 " (1 << 6)"
+D G "COL3" 3 69 " (1 << 7)"
+D G "ROW0" 3 71 " (1 << 0)"
+D G "ROW1" 3 72 " (1 << 1)"
+D G "ROW2" 3 73 " (1 << 2)"
+D G "ROW3" 3 74 " (1 << 3)"
+D G "ALL_ROWS" 3 78 " (ROW0|ROW1|ROW2|ROW3)"
+D G "ALL_PINS" 3 79 " (ALL_ROWS|COL0|COL1|COL2|COL3)"
+V G "KEYS" 3 82 "[4][4]" `662 
+D G "KBD_DEBOUNCE_FACTOR" 3 87 "33" "Set this number to apx n/333 where"
+C L "kbd_init" 3 2 2 "FUNCTION"
+F G "kbd_init" 3 92 "void()" `666 
+F G "kbd_getc" 3 95 "int8()" `667 
+V L "kbd_call_count" 3 96 "int8" `668 
+V L "kbd_down" 3 97 "int1" `669 
+V L "last_key" 3 98 "int8" `670 
+V L "col" 3 99 "int8" `671 
+V L "kchar" 3 101 "int8" `672 
+V L "row" 3 102 "int8" `673 
+V G "Temperatura" 0 11 "float" `675 
+V G "Res" 0 11 "float" `676 
+C L "MAIN" 0 10 1 "FUNCTION"
+F G "MAIN" 0 12 "void()" `677 
+C L "MAIN" 0 10 1 "FUNCTION"
+C L "MAIN" 0 10 1 "FUNCTION"
+C L "MAIN" 0 10 1 "FUNCTION"
+C L "MAIN" 0 10 1 "FUNCTION"
+C L "MAIN" 0 10 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0
